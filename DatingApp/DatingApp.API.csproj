@@ -20,6 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\DatingApp.Interfaces.Repository\DatingApp.Interfaces.Repository.csproj" />
     <ProjectReference Include="..\DatingApp.Interfaces.Services\DatingApp.Interfaces.Services.csproj" />
     <ProjectReference Include="..\DatingApp.Repositories\DatingApp.Repositories.csproj" />
