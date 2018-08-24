@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DatingApp.Entities\DatingApp.Entities.csproj" />
+    <ProjectReference Include="..\DatingApp.Data\DatingApp.Data.csproj" />
   </ItemGroup>
 
 </Project>

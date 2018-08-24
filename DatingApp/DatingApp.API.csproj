@@ -5,24 +5,23 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Data\" />
+    <Compile Remove="Data\**" />
+    <Content Remove="Data\**" />
+    <EmbeddedResource Remove="Data\**" />
+    <None Remove="Data\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.1.2" />
-  </ItemGroup>
-
-  <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
-    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DatingApp.Entities\DatingApp.Entities.csproj" />
     <ProjectReference Include="..\DatingApp.Interfaces.Repository\DatingApp.Interfaces.Repository.csproj" />
     <ProjectReference Include="..\DatingApp.Interfaces.Services\DatingApp.Interfaces.Services.csproj" />
-    <ProjectReference Include="..\DatingApp.Models\DatingApp.Models.csproj" />
     <ProjectReference Include="..\DatingApp.Repositories\DatingApp.Repositories.csproj" />
     <ProjectReference Include="..\DatingApp.Services\DatingApp.Services.csproj" />
   </ItemGroup>

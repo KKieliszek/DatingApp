@@ -1,4 +1,5 @@
-﻿using DatingApp.Entities.Models;
+﻿using DatingApp.Data;
+using DatingApp.Data.Models;
 using DatingApp.Interfaces.Repository;
 using Microsoft.EntityFrameworkCore;
 using System;

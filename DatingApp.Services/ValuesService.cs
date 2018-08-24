@@ -1,9 +1,8 @@
-﻿using DatingApp.Entities.Models;
-using DatingApp.Interfaces.Repository;
+﻿using DatingApp.Interfaces.Repository;
 using DatingApp.Interfaces.Services;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using DatingApp.Data.Models;
 using System.Threading.Tasks;
 
 namespace DatingApp.Services
