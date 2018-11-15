@@ -20,6 +20,7 @@ namespace DatingApp.Controllers
             _valueService = valueService;
         }
         // GET api/values
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> GetValues()
         {
