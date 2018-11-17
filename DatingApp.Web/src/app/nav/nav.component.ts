@@ -19,7 +19,7 @@ export class NavComponent implements OnInit {
       .subscribe(resp => {
         console.log('sucess');
       }, error => {
-      console.log('fail');
+      console.log(error);
     });
   }
 
