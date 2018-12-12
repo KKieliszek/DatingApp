@@ -13,6 +13,7 @@ using System.Net;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using DatingApp.API.Helpers;
+using DatingApp.Data.Seed;
 
 namespace DatingApp
 {
@@ -34,6 +35,7 @@ namespace DatingApp
             services.AddRepositoryScopes();
             services.AddMvc();
             services.AddCors();
+            services.AddTransient<Seed>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
@@ -49,7 +51,7 @@ namespace DatingApp
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, Seed seeder)
         {
             if (env.IsDevelopment())
             {
@@ -88,6 +90,7 @@ namespace DatingApp
 
             }
 
+            //seeder.SeedUsers();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseAuthentication();
             app.UseMvc();
