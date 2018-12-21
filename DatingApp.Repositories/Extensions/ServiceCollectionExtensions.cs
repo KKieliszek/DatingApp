@@ -9,6 +9,7 @@ namespace DatingApp.Repositories.Extensions
         {
             services.AddScoped<IValueRepo, ValuesRepository>();
             services.AddScoped<IAuthRepository, AuthRepository>();
+            services.AddScoped<IDatingRepository, DatingRepository>();
         }
     }
 }
