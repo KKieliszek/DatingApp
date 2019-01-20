@@ -5,8 +5,9 @@ import { MessagesComponent } from './messages/messages.component';
 import { ListsComponent } from './lists/lists.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
-import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
-import { MemberListResolver } from './_resolvers/member-list.resolver';
+import { MemberListResolver } from './members/member-list/member-list.resolver';
+import { MemberDetailResolver } from './members/member-detail/member-detail.resolver';
+
 
 export const appRoutes: Routes = [
     {path: '', component: HomeComponent},
