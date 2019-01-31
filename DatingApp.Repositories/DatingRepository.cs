@@ -25,6 +25,7 @@ namespace DatingApp.Repositories
         public void Delete<T>(T entity) where T : class
         {
             _context.Remove(entity);
+
         }
 
         public async Task<User> GetUser(int id)
