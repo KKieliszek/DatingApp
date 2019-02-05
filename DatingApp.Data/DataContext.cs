@@ -1,5 +1,6 @@
 ﻿using DatingApp.Data.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace DatingApp.Data
 {
@@ -10,5 +11,8 @@ namespace DatingApp.Data
         public DbSet<Value> Values { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Photo> Photos { get; set; }
+
+
+       
     }
 }

@@ -13,22 +13,44 @@ import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.gu
 
 
 export const appRoutes: Routes = [
-    {path: '', component: HomeComponent},
+    {
+        path: '',
+        component: HomeComponent
+    },
     {
         path: '',
         runGuardsAndResolvers: 'always',
         canActivate: [AuthGuard],
         children: [
-            {path: 'members', component: MemberListComponent,
+            {
+                path: 'members',
+                component: MemberListComponent,
                 resolve: {users: MemberListResolver}},
-            {path: 'members/:id', component: MemberDetailComponent,
-                resolve: {user: MemberDetailResolver}},
-            {path: 'member/edit', component: MemberEditComponent,
-            resolve: {user: MemberEditResolver}, canDeactivate: [PreventUnsavedChangesGuard]},
-            {path: 'messages', component: MessagesComponent},
-            {path: 'lists', component: ListsComponent},
+            {
+                path: 'members/:id',
+                component: MemberDetailComponent,
+                resolve: {user: MemberDetailResolver}
+            },
+            {
+                path: 'member/edit',
+                component: MemberEditComponent,
+                resolve: {user: MemberEditResolver},
+                canDeactivate: [PreventUnsavedChangesGuard]
+            },
+            {
+                path: 'messages',
+                component: MessagesComponent
+            },
+            {
+                path: 'lists',
+                component: ListsComponent
+            },
         ]
     },
-    { path: '**', redirectTo: '', pathMatch: 'full'},
+    {
+        path: '**',
+        redirectTo: '',
+        pathMatch: 'full'
+    },
 
 ];
