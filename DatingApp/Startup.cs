@@ -15,6 +15,8 @@ using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using DatingApp.API.Helpers;
 using DatingApp.Data.Seed;
+using DatingApp.Services.Helpers;
+using DatingApp.Services.Extensions;
 
 namespace DatingApp
 {
@@ -31,14 +33,14 @@ namespace DatingApp
         public void ConfigureServices(IServiceCollection services)
         {      
             services.AddDataAccessServices(Configuration.GetConnectionString("DefaultConnection"));
-
-            services.AddScoped<IValueService, ValuesService>();
+            services.AddServiceScopes();
             services.AddRepositoryScopes();
             services.AddMvc().AddJsonOptions(o =>
            {
                o.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
            });
             services.AddCors();
+            services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
             services.AddAutoMapper();
             services.AddTransient<Seed>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

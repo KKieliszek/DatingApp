@@ -1,4 +1,5 @@
 ﻿using DatingApp.Data.Models;
+using DatingApp.Data.Models.RequestDtos;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,5 +14,7 @@ namespace DatingApp.Interfaces.Repository
         Task<bool> SaveAll();
         Task<IEnumerable<User>> GetUsers();
         Task<User> GetUser(int id);
+        Task<Photo> GetPhoto(int id);
+        Task<Photo> AddPhotoForUser(int userId, PhotoForCreationDto photoForCreationDto);
     }
 }

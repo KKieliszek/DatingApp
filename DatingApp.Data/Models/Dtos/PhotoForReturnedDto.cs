@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace DatingApp.Data.Models
+namespace DatingApp.Data.Models.Dtos
 {
-    public class Photo
+    public class PhotoForReturnedDto
     {
         public int Id { get; set; }
         public string Url { get; set; }
@@ -10,7 +12,5 @@ namespace DatingApp.Data.Models
         public DateTime DateAdded { get; set; }
         public bool isMain { get; set; }
         public string PublicId { get; set; }
-        public User User { get; set; }
-        public int UserId { get; set; }
     }
 }
