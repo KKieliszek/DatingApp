@@ -16,5 +16,6 @@ namespace DatingApp.Interfaces.Repository
         Task<User> GetUser(int id);
         Task<Photo> GetPhoto(int id);
         Task<Photo> AddPhotoForUser(int userId, PhotoForCreationDto photoForCreationDto);
+        Task<Photo> GetMainPhotoForUser(int userId);
     }
 }

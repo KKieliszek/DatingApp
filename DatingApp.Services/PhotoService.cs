@@ -1,14 +1,12 @@
 ﻿using AutoMapper;
 using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
-using DatingApp.Data.Models;
 using DatingApp.Data.Models.Dtos;
 using DatingApp.Data.Models.RequestDtos;
 using DatingApp.Interfaces.Repository;
 using DatingApp.Interfaces.Services;
 using DatingApp.Services.Helpers;
 using Microsoft.Extensions.Options;
-using System;
 using System.Threading.Tasks;
 
 namespace DatingApp.Services
@@ -60,6 +58,14 @@ namespace DatingApp.Services
             var photo = await _repo.AddPhotoForUser(userId, photoForCreationDto);
 
             return _mapper.Map<PhotoForReturnedDto>(photo);
+        }
+
+        public DeletionResult DeletePhoto(string photoPublicId)
+        {
+            var deleteParms = new DeletionParams(photoPublicId);
+            var cloudinaryResult =  _cloudinary.Destroy(deleteParms);
+            return cloudinaryResult;
+
         }
     }
 }

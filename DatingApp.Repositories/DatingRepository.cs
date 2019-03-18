@@ -22,6 +22,11 @@ namespace DatingApp.Repositories
             _context = context;
             _mapper = mapper;
         }
+        public async Task<bool> SaveAll()
+        {
+            return await _context.SaveChangesAsync() > 0;
+        }
+
         public void Add<T>(T entity) where T : class
         {
             _context.Add(entity);
@@ -70,9 +75,11 @@ namespace DatingApp.Repositories
             return users;
         }
 
-        public async Task<bool> SaveAll()
+       
+
+        public async Task<Photo> GetMainPhotoForUser(int userId)
         {
-            return await _context.SaveChangesAsync() > 0;
+            return await _context.Photos.Where(u => u.UserId == userId).FirstOrDefaultAsync(p => p.isMain);
         }
 
 
