@@ -10,6 +10,7 @@ using System;
 using System.IdentityModel.Tokens.Jwt;
 using AutoMapper;
 using DatingApp.Data.Models.Dtos;
+using DatingApp.Data.Models;
 
 namespace DatingApp.API.Controllers
 {
@@ -38,9 +39,13 @@ namespace DatingApp.API.Controllers
                 return BadRequest("Username already exists");
             }
 
-            var createdUser = await _repo.RegisterAsync(userForRegisterDto.UserName, userForRegisterDto.Password);
+            var userToCreate = _mapper.Map<User>(userForRegisterDto);
 
-            return StatusCode(201);
+            var createdUser = await _repo.RegisterAsync(userToCreate, userForRegisterDto.Password);
+
+            var userToReturn = _mapper.Map<UserForDetailsDto>(createdUser);
+
+            return CreatedAtRoute("GetUser", new { controller = "Users", id = createdUser.Id }, userToReturn);
         }
 
         [HttpPost("login")]

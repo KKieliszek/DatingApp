@@ -32,17 +32,13 @@ namespace DatingApp.Repositories
             return user;
         }
 
-        public async Task<User> RegisterAsync(string username, string password)
+        public async Task<User> RegisterAsync(User userToCreate, string password)
         {
             byte[] passwordHash, passwordSalt;
             CreatePasswordHash(password, out passwordHash, out passwordSalt);
 
-            var userToCreate = new User
-            {
-                Username = username,
-                PasswordHash = passwordHash,
-                PasswordSalt = passwordSalt
-            };
+            userToCreate.PasswordHash = passwordHash;
+            userToCreate.PasswordSalt = passwordSalt;
       
             await _context.Users.AddAsync(userToCreate);
             await _context.SaveChangesAsync();
