@@ -13,6 +13,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DatingApp.Interfaces.Repository\DatingApp.Interfaces.Repository.csproj" />
+    <ProjectReference Include="..\DatingApp.Models\DatingApp.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Helpers\" />
   </ItemGroup>
 
 </Project>

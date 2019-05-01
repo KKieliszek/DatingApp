@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DatingApp.Data\DatingApp.Data.csproj" />
+    <ProjectReference Include="..\DatingApp.Models\DatingApp.Models.csproj" />
   </ItemGroup>
 
 </Project>

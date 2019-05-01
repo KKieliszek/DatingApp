@@ -29,7 +29,7 @@ import { MemberEditComponent } from './members/member-edit/member-edit.component
 import { MemberEditResolver } from './members/member-edit/member-edit-resolver';
 import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
-import { BsDropdownModule, BsDatepickerModule } from 'ngx-bootstrap';
+import { BsDropdownModule, BsDatepickerModule, PaginationModule } from 'ngx-bootstrap';
 import {TimeAgoPipe} from 'time-ago-pipe';
 
 export function tokenGetter() {
@@ -61,6 +61,7 @@ export function tokenGetter() {
       NgXBootstrapModule,
       RouterModule.forRoot(appRoutes),
       NgxGalleryModule,
+      PaginationModule.forRoot(),
       FileUploadModule,
       JwtModule.forRoot({
           config: {

@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
 using DatingApp.Data;
 using DatingApp.Data.Models;
+using DatingApp.Data.Models.RepoModels;
 using DatingApp.Data.Models.RequestDtos;
 using DatingApp.Interfaces.Repository;
+using DatingApp.Models.RequestModels;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace DatingApp.Repositories
@@ -69,10 +69,12 @@ namespace DatingApp.Repositories
             return user;
         }
 
-        public async Task<IEnumerable<User>> GetUsers()
+        public async Task<PagedList<User>> GetUsers(UserParams userParams)
         {
-            var users = await _context.Users.Include(p => p.Photos).ToListAsync();
-            return users;
+            var users = _context.Users.Include(p => p.Photos).AsQueryable();
+            users = users.Where(u => u.Id != userParams.UserId);
+            users = users.Where(u => u.gender == userParams.Gender);
+            return await PagedList<User>.CreateAsync(users, userParams.PageNumber, userParams.PageSize);
         }
 
        

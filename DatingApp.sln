@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatingApp.Interfaces.Reposi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatingApp.Web", "DatingApp.Web\DatingApp.Web.csproj", "{37E79CA2-C443-4A6F-8F24-981EDB2896E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingApp.Data", "DatingApp.Data\DatingApp.Data.csproj", "{26E0A948-3D29-4EE5-9F7E-45B55CD77277}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatingApp.Data", "DatingApp.Data\DatingApp.Data.csproj", "{26E0A948-3D29-4EE5-9F7E-45B55CD77277}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingApp.Models", "DatingApp.Models\DatingApp.Models.csproj", "{4E74EF6E-458F-4ED5-9BD7-0574D86A613E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{26E0A948-3D29-4EE5-9F7E-45B55CD77277}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26E0A948-3D29-4EE5-9F7E-45B55CD77277}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26E0A948-3D29-4EE5-9F7E-45B55CD77277}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E74EF6E-458F-4ED5-9BD7-0574D86A613E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E74EF6E-458F-4ED5-9BD7-0574D86A613E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E74EF6E-458F-4ED5-9BD7-0574D86A613E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E74EF6E-458F-4ED5-9BD7-0574D86A613E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
