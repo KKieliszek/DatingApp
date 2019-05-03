@@ -22,7 +22,7 @@ namespace DatingApp.Data.Models.RepoModels
             AddRange(items);
         }
         
-        public static async Task<PagedList<T>> CreateAsync(IQueryable<T> source, int pageNumber, int pageSize)
+        public static async Task<PagedList<T>> CreatePagedListAsync(IQueryable<T> source, int pageNumber, int pageSize)
         {
             // Full Count
             var count = await source.CountAsync();
