@@ -7,7 +7,6 @@ using DatingApp.Interfaces.Repository;
 using DatingApp.Models.RequestModels;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
