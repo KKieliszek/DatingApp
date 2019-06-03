@@ -31,6 +31,7 @@ import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.gu
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { BsDropdownModule, BsDatepickerModule, PaginationModule, ButtonsModule } from 'ngx-bootstrap';
 import {TimeAgoPipe} from 'time-ago-pipe';
+import { ListResolver } from './_resolvers/lists.resolver';
 
 export function tokenGetter() {
     return localStorage.getItem('token');
@@ -81,7 +82,8 @@ export function tokenGetter() {
       MemberDetailResolver,
       MemberListResolver,
       MemberEditResolver,
-      PreventUnsavedChangesGuard
+      PreventUnsavedChangesGuard,
+      ListResolver
    ],
    bootstrap: [
       AppComponent

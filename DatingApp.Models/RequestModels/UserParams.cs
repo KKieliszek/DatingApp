@@ -28,5 +28,9 @@ namespace DatingApp.Models.RequestModels
 
         public string orderBy { get; set; }
 
+        public bool Likees { get; set; }
+
+        public bool Likers { get; set; }
+
     }
 }
