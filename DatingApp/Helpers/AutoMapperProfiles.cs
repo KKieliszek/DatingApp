@@ -1,8 +1,9 @@
 ﻿using AutoMapper;
-using DatingApp.API.RequestModels;
 using DatingApp.Data.Models;
 using DatingApp.Data.Models.Dtos;
 using DatingApp.Data.Models.RequestDtos;
+using DatingApp.Data.RequestDtos;
+using DatingApp.Models.RequestModels;
 using System.Linq;
 
 namespace DatingApp.API.Helpers
@@ -34,6 +35,10 @@ namespace DatingApp.API.Helpers
             CreateMap<Photo, PhotoForReturnedDto>();
             CreateMap<PhotoForCreationDto, Photo>();
             CreateMap<UserForRegisterDto, User>();
+            CreateMap<MessageForCreationRequestDto, Message>().ReverseMap();
+            CreateMap<Message, MessageForReturnDto>()
+                .ForMember(m => m.SenderPhotoUrl, opt => opt.MapFrom(u => u.Sender.Photos.FirstOrDefault(p => p.isMain).Url))
+                .ForMember(m => m.RecipientPhotoUrl, opt => opt.MapFrom(u => u.Recipient.Photos.FirstOrDefault(p => p.isMain).Url));
         }
     }
 }

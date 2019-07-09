@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace DatingApp.API.RequestModels
+namespace DatingApp.Models.RequestModels
 {
     public class UserForRegisterDto
     {
