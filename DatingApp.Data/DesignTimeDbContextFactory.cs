@@ -8,6 +8,7 @@ namespace DatingApp.API
 {
     public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<DataContext>
     {
+   
         public DataContext CreateDbContext(string[] args)
         {
             IConfigurationRoot configuration = new ConfigurationBuilder()
@@ -19,7 +20,7 @@ namespace DatingApp.API
 
             var connectionString = configuration.GetConnectionString("DefaultConnection");
 
-            builder.UseSqlite(connectionString);
+            builder.UseMySql(connectionString);
 
             return new DataContext(builder.Options);
         }

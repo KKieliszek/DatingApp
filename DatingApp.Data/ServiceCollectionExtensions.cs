@@ -8,7 +8,7 @@ namespace DatingApp.Data
         public static void AddDataAccessServices(this IServiceCollection services, string connectionString)
         {
             services.AddDbContext<DataContext>(options =>
-              options.UseSqlite(connectionString));
+              options.UseMySql(connectionString));
         }
     }
 }
